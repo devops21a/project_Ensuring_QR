@@ -5,11 +5,11 @@ variable "subscription_id" {
 }
 variable "client_id" {
   type = string
-  default = "3f067734-03e4-4f49-8a2b-f792d1794a5e"
+  default = "dea41759-f795-41ec-b903-42587009a5c3"
 }
 variable "client_secret" {
   type = string
-  default = "kc2Ug0A~M88ZfF7IB3jVRtVNd~7Jk.fqru"
+  default = "dqmPddWbtKBjznvduY65uKah~-spFpB5uW"
 }
 variable "tenant_id" {
   type = string
