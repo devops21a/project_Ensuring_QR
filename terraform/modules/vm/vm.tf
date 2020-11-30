@@ -20,7 +20,7 @@ resource "azurerm_linux_virtual_machine" "terraformprojectvm" {
   network_interface_ids = [azurerm_network_interface.test.id]
   admin_ssh_key {
     username   = var.usr
-    public_key = file("C:/Users/Acer/.ssh/id_rsa.pub")
+    public_key = var.pub_key
   }
   os_disk {
     caching           = "ReadWrite"
