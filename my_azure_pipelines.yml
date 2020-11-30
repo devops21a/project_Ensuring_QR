@@ -1,0 +1,47 @@
+trigger:
+  - main
+pool:
+  name: Azure Pipelines
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: CopyFiles@2
+  displayName: 'Copy Files '
+  inputs:
+    TargetFolder: '$(build.artifactstagingdirectory)/Terraform'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+
+- task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
+  displayName: 'Use Terraform 0.13.5'
+  inputs:
+    terraformVersion: 0.13.5
+
+- task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
+  displayName: 'terraform init'
+  inputs:
+    command: init
+    workingDirectory: '$(System.DefaultWorkingDirectory)/_build-pipeline-CI/drop/Terraform/terraform/environments/project'
+    backendType: selfConfigured
+
+- task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
+  displayName: 'terraform validate'
+  inputs:
+    workingDirectory: '$(System.DefaultWorkingDirectory)/_build-pipeline-CI/drop/Terraform/terraform/environments/project'
+
+- task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
+  displayName: 'terraform plan'
+  inputs:
+    command: plan
+    workingDirectory: '$(System.DefaultWorkingDirectory)/_build-pipeline-CI/drop/Terraform/terraform/environments/project'
+    environmentServiceName: 'Free Trial (ff63d938-3ec1-4bbb-a80e-2f733dd33cf6)'
+
+- task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
+  displayName: 'terraform apply'
+  inputs:
+    command: apply
+    workingDirectory: '$(System.DefaultWorkingDirectory)/_build-pipeline-CI/drop/Terraform/terraform/environments/project'
+    environmentServiceName: 'Free Trial (ff63d938-3ec1-4bbb-a80e-2f733dd33cf6)'
