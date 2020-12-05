@@ -14,7 +14,7 @@
 						"id": "ef00d60e-89af-419b-9a71-df07dab9b032",
 						"exec": [
 							"pm.test(\"Body contains es\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"moh\");",
+							"    pm.expect(pm.response.text()).to.include(\"tes\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -55,10 +55,9 @@
 					"script": {
 						"id": "7973fcde-dbf4-4cad-8f5e-3d05987d5acf",
 						"exec": [
-							"pm.test(\"Successful response\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"success\");",
-							"});",
-							""
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
 						],
 						"type": "text/javascript"
 					}
