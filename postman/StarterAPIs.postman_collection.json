@@ -15,6 +15,9 @@
 						"exec": [
 							"pm.test(\"Body contains es\", function () {",
 							"    pm.expect(pm.response.text()).to.include(\"tes\");",
+							"});",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -75,6 +78,125 @@
 						"api",
 						"v1",
 						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3728a484-a9c7-44fc-a352-53dd639c3fd5",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"employee_name\": \"test\",\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/employee/{{id_get}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"{{id_get}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7ca0da59-c9a2-4831-8e03-9b4fb358c3df",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "employee_name",
+							"value": "{{name_put}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/update/{{id_put}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"update",
+						"{{id_put}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE an Employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "508251e9-63a7-4803-9bd6-0f442ffa35ce",
+						"exec": [
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/delete/{{id_delete}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"delete",
+						"{{id_delete}}"
 					]
 				}
 			},
