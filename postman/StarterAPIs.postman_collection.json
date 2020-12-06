@@ -6,57 +6,12 @@
 	},
 	"item": [
 		{
-			"name": "Create Employee",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "ef00d60e-89af-419b-9a71-df07dab9b032",
-						"exec": [
-							"pm.test(\"Body contains es\", function () {",
-							"    pm.expect(pm.response.text()).to.include(\"tes\");",
-							"});",
-							"pm.test(\"Successful POST request\", function () {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"{{name}}\",\n    \"salary\": \"{{salary}}\",\n    \"age\": \"{{age}}\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/api/v1/create",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"v1",
-						"create"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Get All Employees",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "7973fcde-dbf4-4cad-8f5e-3d05987d5acf",
+						"id": "a406e0cc-054e-40b9-95a1-a8d1c228762b",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -91,8 +46,63 @@
 					"script": {
 						"id": "3728a484-a9c7-44fc-a352-53dd639c3fd5",
 						"exec": [
-							"pm.test(\"Response time is less than 200ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"pm.test('status code is 200', function() {\r",
+							"    pm.response.to.have.status\r",
+							"})\r",
+							"\r",
+							"pm.test(\"id is greather than 0 \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.id).above(0);\r",
+							"});\r",
+							"\r",
+							"var schema =\r",
+							"  {\r",
+							"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"status\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"data\": {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"employee_name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"employee_salary\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"employee_age\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"profile_image\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"employee_name\",\r",
+							"        \"employee_salary\",\r",
+							"        \"employee_age\",\r",
+							"        \"profile_image\"\r",
+							"      ]\r",
+							"    },\r",
+							"    \"message\": {\r",
+							"      \"type\": \"string\"\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"status\",\r",
+							"    \"data\",\r",
+							"    \"message\"\r",
+							"  ]\r",
+							"}\r",
+							"var json = pm.response.json() \r",
+							"pm.test('schema is valid', function() {\r",
+							"    pm.expect(tv4.validate(json, schema)).to.be.true;\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -107,7 +117,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 5,\r\n    \"employee_name\": \"test\",\r\n}"
+					"raw": ""
 				},
 				"url": {
 					"raw": "{{url}}/api/v1/employee/{{id_get}}",
@@ -125,15 +135,25 @@
 			"response": []
 		},
 		{
-			"name": "PUT Employee",
+			"name": "Create Employee",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "7ca0da59-c9a2-4831-8e03-9b4fb358c3df",
+						"id": "ef00d60e-89af-419b-9a71-df07dab9b032",
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
+							"pm.test(\"Successful response\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"success\");",
+							"});",
+							"",
+							"pm.test(\"Body contains es\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"tes\");",
+							"});",
+							"",
+							"pm.test(\"Verify Employee\", function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data.employee_name).to.equal(pm.variables.get(\"name\"));",
+							"    pm.expect(jsonData.data.employee_salary).to.equal(pm.variables.get(\"salary\"))",
 							"});"
 						],
 						"type": "text/javascript"
@@ -141,62 +161,26 @@
 				}
 			],
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "employee_name",
-							"value": "{{name_put}}",
-							"type": "text"
+					"mode": "raw",
+					"raw": "{\n    \"employee_name\": \"{{name}}\",\n    \"employee_salary\": \"{{salary}}\",\n    \"employee_age\": \"{{age}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": {
-					"raw": "{{url}}/api/v1/update/{{id_put}}",
+					"raw": "{{url}}/api/v1/create",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
 						"v1",
-						"update",
-						"{{id_put}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE an Employee",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "508251e9-63a7-4803-9bd6-0f442ffa35ce",
-						"exec": [
-							"pm.test(\"Status code name has string\", function () {\r",
-							"    pm.response.to.have.status(\"OK\");\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/api/v1/delete/{{id_delete}}",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"v1",
-						"delete",
-						"{{id_delete}}"
+						"create"
 					]
 				}
 			},
