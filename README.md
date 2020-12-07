@@ -151,5 +151,6 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
        JMeter endurance result:
        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/jmeter_endurance_result.png)
        
-       
+   - **3. Selenium**
+     * ererer  
        
