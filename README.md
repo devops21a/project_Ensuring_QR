@@ -6,7 +6,17 @@ In this project, you will create a tests environments and run a variety of autom
 
 ## Getting Started
 Befor you even get ready to build the code:
-1. Make a plan
-2. Read the project several times
+1. Be familiar with these tools:
+   * Azure DevOps
+   * Selenium
+   * Terraform
+   * JMeter
+   * Postman
+2. Make a plan
+3. Read the project several times
+
+## Dependencies
+To do before you run the code:
+1. 
 
 
