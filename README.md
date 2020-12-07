@@ -90,6 +90,5 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
 
 The tests suites will be executed to the Azure Devop, CI/CD pipeline
 
-   **1. Using Postman**
-     
+     **1. Using Postman**
      - rerere
