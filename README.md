@@ -56,4 +56,4 @@ After you have collected your dependencies, the first thing you will do is to st
     - Log in to your DevOps account and create a new project.
     - Initialize the Azure DevOps Repo to build the pipeline by __import a repository__ under __Repos__
     - Create a new Azure DevOps Build Pipeline
-      - Click on Pipelines/pipelines on the left, then Create Pipeline. Select Use the classic editor
+      - Click on Pipelines/pipelines on the left, then __Create Pipeline__. Select __Use the classic editor__
