@@ -40,7 +40,9 @@ After you have collected your dependencies, the first thing you will do is to st
     - so ````git clone````
   - Create a resource group: ````az group create --location your-location --name nameoftheresourcegroup````
   - Run the shell-script: ````configure_storage_account.sh```` from your command line. Use the project group created before.
-  - To list the account access keys (````access_key````), run: ````àz storage account keys list --resource-group nameoftheresourcegroup --account-name nameofthestorageaccount````
+  - To list the account access keys (````access_key````), run:
+  
+  ````àz storage account keys list --resource-group nameoftheresourcegroup --account-name nameofthestorageaccount````
   - Create a Service principal and the client secret for Terraform, run:
   
     ````az adsp create-for-rbac --role="Contributor" --scopes="/subscriptions/your-subscription-ID"````
