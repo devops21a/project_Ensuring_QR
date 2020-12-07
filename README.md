@@ -50,6 +50,7 @@ After you have collected your dependencies, the first thing you will do is to st
   - Create another folder __project__ as a subfolder to environments to stimulate a type of environment.
   
      See the directory tree:
+     
     ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/terraform_tree.png)
     
   - Deploying Terraform Infrastructure (Terraform resources) using Azure DevOps Pipelines:
@@ -93,10 +94,10 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
      * Create a data validation and a regression test suite and publish the results to Azure Pipelines:
        * Export your collection and eventually the environment variables (if your collection uses it) from Postman. My collection (__StarterAPIs.postman_collection.json__ and __StarterAPIs2.postman_collection.json__) and my environment (__Walkthrough_StarterAPIs.postman_environment.json__) are under __postman__-folder.
        
-       __StarterAPIs.postman_collection.json__ for ````Get All Employees````, ````Get Employee```` and ````Create Employee```` .
-       __StarterAPIs2.postman_collection.json__ for ````Put Employee```` and ````Delete Employee```` .
-       
-       I had to split the collection in two sub-collections because my Pipeline crashed when I run all together (has a poor network)
+         __StarterAPIs.postman_collection.json__ for ````Get All Employees````, ````Get Employee```` and ````Create Employee```` .
+         __StarterAPIs2.postman_collection.json__ for ````Put Employee```` and ````Delete Employee```` .
+        
+         I had to split the collection in two sub-collections because my Pipeline crashed when I run all together (has a poor network)
     
      * Now, back to your DevOps project to create a pipeline:
        * You create your pipeline like I did previously when I create a pipeline for Terraform. Except that you have to __Add__ a two __command line__ tasks.
