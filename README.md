@@ -85,3 +85,4 @@ After you have collected your dependencies, the first thing you will do is to st
         ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/pipeline_deployments.png)
         
 The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
+2. 
