@@ -173,8 +173,22 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/selenium_test.png)
        
    - **4. Alert**  
-     * you will configure an alert on an Azure AppService. You’ll send some requests to cause the AppService to error, and trigger your alert.
-      * Go to your appService in Micorsoft Azure, then look for **Monitoring** in the menu on the left hand side, then **Alerts**, click this.
-      * 
+      * you will configure an alert on an Azure AppService. You’ll send some requests to cause the AppService to error, and trigger your alert.
+       * Go to your appService in Micorsoft Azure, then look for **Monitoring** in the menu on the left hand side, then **Alerts**, click this.
+       * Then make a **new Alert Rule**, check the resource first, then add a **Condition** and choose **HTTP 404**.
+       * Set the threshold value to **1**, means whenever you got two HTTP 404 errors, the alert will trigger, then click **done**
+       * Now create a new **Action Group** and call it for **email** (means, people who are interested in the alert). Then the **Action name** as HTTP 404 and the **Action Type** to **Email/SMS/Push/Voice** . Then tape your email, clico on ok and ok again.
+       * so your alert rule name **HTTP 404 grather than 1**, **severity** to 1.
+       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/alert_rule.png)
+       * Back to your web browser, and create a few errors by givivng the URL of your AppService, and typing ````/feff````or some other random characters
+       * And You should get an email (the alert will be triggered), like this:
+       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/received_email_triggered_alert.png)
        
+       Metrics:
+       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/metric.png)
+       
+       Graphs of resource:
+       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/graphs_of_resource.png)
+       
+        
        
