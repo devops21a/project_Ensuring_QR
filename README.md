@@ -120,3 +120,5 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
           and the test results:
           ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/postman_startapis2_testResults.png)
          
+   - **2. Test suite for JMeter**
+     * rererer
