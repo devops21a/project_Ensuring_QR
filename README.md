@@ -32,7 +32,7 @@ To do before you run the code:
 ## Instructions
 After you have collected your dependencies, the first thing you will do is to start with Terraform.
 
-  __1. Terraform__
+  **1. Terraform**
   
     test
 
