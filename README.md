@@ -2,7 +2,7 @@
 Udacity project to ensure the quality releases 
 
 ## Introduction
-In this project, you will create a tests environments and run a variety of automated tests. You will also monitor and provide insight into your application's behavior, and determine root causes by querying the application’s custom log files.
+In this project, you will create an environment, delivery of a software, the automated testing of the software and the performance monitoring of the environment under different conditions.
 
 ## Getting Started
 Befor you even get ready to build the code:
@@ -28,5 +28,9 @@ To do before you run the code:
 3. Install Postman
 4. Install Python
 5. Install Selenium
+
+## Instructions
+After you have collected your dependencies, the first thing you will do is to start with Terraform.
+  __1. Terraform__
 
 
