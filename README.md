@@ -121,4 +121,8 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
           ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/postman_startapis2_testResults.png)
          
    - **2. Test suite for JMeter**
-     * rererer
+     * Now, you write a test collection that will run against the AppService you have deployed through terraform. In my case the AppService is __Web-app-proj-QR__
+       * Once the VM is deployed through terraform (like you did in the beginning), you need to deploy the fakerestapi to that VM. See the ````Build```` stage and task ````ArchiveFiles@2```` in ````azure-pipelines.yaml````. The fakerestapi contains a web API, with REST endpoints for managing Activities (GET All Activities, Get Activity by ID, POST Activity, PUT Activity).
+       * After running the pipeline (see ````azure-pipelines.yaml````) you should get this:
+       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/deploying_fakerestapi.png)
+
