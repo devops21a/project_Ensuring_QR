@@ -89,6 +89,8 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
   **2. Execution of the tests duites**
     The tests suites will be executed to the Azure Devop, CI/CD pipeline
    - **1. Using Postman**
-     * dsdsd
+     * After installing Postman. You can use the __StarterAPIs.json__ under __postman__-folder in my repo a reference to make a collection and add a CRUD-requests. CRUD (create, read, update and delete), it's a operations done in a data repository (just database and records). 
+     * Create a data validation and a regression test suite and publish the results to Azure Pipelines:
+      * dfdfdfdf
     
     
