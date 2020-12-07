@@ -62,4 +62,20 @@ After you have collected your dependencies, the first thing you will do is to st
       - Then click the plus sign (+) and add the __copy files__ task. Set the target folder as __$(build.artifactstagingdirectory)/Terraform__ and the display name as __Copy     Files__
       - Add another job with type __Publish Build Artifacts__ with defaults parameters
       - Now in the __Triggers__ tab, check __Enable continuous integration__ checkbox, and click on __Save & queue__, the __Save and run__. The pipeline is launched, and the status should be __Success__
-      
+ - Create an Azure DevOps Release Pipeline using the artifact generate on the build pipeline and a Stage task with these tasks:
+   - Terraform installer
+   - Terraform CLI (init, validate, plan and apply)
+      - Adding the tasks:
+        - First __Add an agent job__ (click on the 3 dots on the Build pipeline), so create a Stage task, add tasks to the agent job (search for Terraform). First task goes to “Terraform Installer”, click on __Add__ and it’s the same steps for the other tasks (Remember, to configure Terraform directory in Configuration Directory and the Backend Type), then Save the build pipeline.
+        - On the __Pipeline__ menu, then __Release__ option. Click on the __New Pipeline__. In the __Select a template__, choose an __Empty job__ template.
+        - Now click on __Add an Artifact__ button. In the page of __Add an artifact__, choose the __Build__ as __Source type__ to use the build pipeline created previously
+        - Click on __Add__, then on __the lightning icon__ and enable the __CD trigger__. Rename the pipeline “azure-pipeline-release”, __Save__, then __OK__
+        - Next is to configure the Stage, click on __Stage 1__ button to rename it to “Terraform”. Then click on __1job, 0 task__ link to configure the tasks. Click on the Agent job (+) sign and Add these tasks:
+          - Terraform Installer
+          - Terraform Init. In Terraform Init, set the __Backend Type__ to __self-configured__ (configured when you run ````configure_storage_account.sh````)
+          - Terraform validate
+          - Terraform plan
+          - Terraform apply
+          - In Terraform plan and apply, set the Environment Azure Subscription to your Subscription.
+        - Click on __Save__, then on __Create release__, and it should show __Terraform Succeeded__ .  
+        
