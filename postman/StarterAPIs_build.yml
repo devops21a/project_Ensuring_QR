@@ -1,0 +1,36 @@
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: refs/heads/main
+jobs:
+- job: Job_1
+  displayName: Postman API Test
+  pool:
+    vmImage: ubuntu-16.04
+  steps:
+  - checkout: self
+    clean: true
+  - task: CmdLine@2
+    displayName: Install Newman
+    inputs:
+      script: >
+        sudo npm install -g newman
+      workingDirectory: $(System.DefaultWorkingDirectory)
+  - task: CmdLine@2
+    displayName: Run Api Tests
+    inputs:
+      script: >+
+        newman run StarterAPIs.postman_collection.json -e Walkthrough_StarterAPIs.postman_environment.json --reporters cli,junit --reporter-junit-export result.xml
+
+      workingDirectory: postman
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Artifact - Postman test
+    inputs:
+      PathtoPublish: postman
+      ArtifactName: Postman test
+  - task: PublishTestResults@1
+    displayName: 'Publish Test Results '
+    inputs:
+      testResultsFiles: '**/*.xml'
+...
