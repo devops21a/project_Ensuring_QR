@@ -136,4 +136,7 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
        * Now it is time to add a post-deployment task to your Pipeline that utilizes JMeter to load test to the various API endpoints (eg. /api/Activities). But before that, you have to understand which type of tests. It will be:
          * Stress test: many users (30 ysers) over short period of time 
          * Endurance test: constant load over a long period of time (60 seconds)
-
+       * Like you did it before, th epipeline to run JMeter contains in addition to the agent, add the __JMeter tool installer__ after you have instlled the JMeter extension. Name will be "Install JMeter 5.3", the version "5.3". After that add a __command-line__ to run the script: ````jmeter -n -t Starter.jmx -l result.csv -e -o Test```` . 
+       The **Starter.jmx** file will be generated using the starterAPIs using variables in JMeter GUI.
+       
+       
