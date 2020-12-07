@@ -200,6 +200,8 @@ See the images
  * https://gmusumeci.medium.com/deploying-terraform-infrastructure-using-azure-devops-pipelines-step-by-step-d58b68fc666d
  * https://www.geeksforgeeks.org/logging-in-python/
  * https://linuxhint.com/chrome_selenium_headless_running/
- 
+ * https://medium.com/@ganeshsirsi/how-to-configure-postman-newman-api-tests-in-azure-devops-or-tfs-and-publish-html-results-caf60a25c8b9
+ * https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/
+ * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys
  
        
