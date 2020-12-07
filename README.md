@@ -189,6 +189,17 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
        
        Graphs of resource:
        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/graphs_of_resource.png)
-       
-        
+  
+  
+## Output 
+See the images
+
+
+## References:
+ * https://azuredevopslabs.com/labs/vstsextend/terraform/ 
+ * https://gmusumeci.medium.com/deploying-terraform-infrastructure-using-azure-devops-pipelines-step-by-step-d58b68fc666d
+ * https://www.geeksforgeeks.org/logging-in-python/
+ * https://linuxhint.com/chrome_selenium_headless_running/
+ 
+ 
        
