@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="StarterAPIs" tests="3" time="2.513">
+  <testsuite name="Get All Employees" id="a00efae5-fa29-4ba8-9422-841a490d437e" timestamp="2020-12-06T23:18:16.195Z" tests="1" failures="0" errors="0" time="0.896">
+    <testcase name="Status code is 200" time="0.896" classname="StarterApIs"/>
+  </testsuite>
+  <testsuite name="Get Employee" id="61438b35-5ffb-4e0f-96e4-22286813063a" timestamp="2020-12-06T23:18:16.195Z" tests="3" failures="0" errors="0" time="0.855">
+    <testcase name="status code is 200" time="0.855" classname="StarterApIs"/>
+    <testcase name="id is greather than 0 " time="0.855" classname="StarterApIs"/>
+    <testcase name="schema is valid" time="0.855" classname="StarterApIs"/>
+  </testsuite>
+  <testsuite name="Create Employee" id="5affb141-e3fe-4c14-aa61-f8776583a516" timestamp="2020-12-06T23:18:16.195Z" tests="3" failures="0" errors="0" time="0.762">
+    <testcase name="Successful response" time="0.762" classname="StarterApIs"/>
+    <testcase name="Body contains es" time="0.762" classname="StarterApIs"/>
+    <testcase name="Verify Employee" time="0.762" classname="StarterApIs"/>
+  </testsuite>
+</testsuites>
