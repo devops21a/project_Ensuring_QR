@@ -1,0 +1,28 @@
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: refs/heads/main
+jobs:
+- job: Job_1
+  displayName: JMeter Test Suite
+  pool:
+    vmImage: vs2017-win2016
+  steps:
+  - checkout: self
+  - task: JMeterInstaller@0
+    displayName: Install JMeter 5.3
+    inputs:
+      jmeterVersion: 5.3
+  - task: CmdLine@2
+    displayName: Run JMeter Test Suite
+    inputs:
+      script: >
+        jmeter -n -t Stress_test.jmx -l stress_result.csv -e -o StressResults
+      workingDirectory: JMeter
+  - task: PublishPipelineArtifact@1
+    displayName: Publish Pipeline Artifact - JMeter
+    inputs:
+      path: JMeter
+      artifactName: JMeter test suite
+...
