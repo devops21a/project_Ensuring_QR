@@ -87,10 +87,20 @@ After you have collected your dependencies, the first thing you will do is to st
 The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
 
   **2. Execution of the tests duites**
-    The tests suites will be executed to the Azure Devop, CI/CD pipeline
+    The tests suites will be executed to the Azure Devops, CI/CD pipeline.
    - **1. Using Postman**
-     * After installing Postman. You can use the __StarterAPIs.json__ under __postman__-folder in my repo a reference to make a collection and add a CRUD-requests. CRUD (create, read, update and delete), it's a operations done in a data repository (just database and records). 
+     * After installing Postman. You can use the __StarterAPIs.json__ under __postman__-folder in my repo as reference to make a collection and add a CRUD-requests. CRUD (create, read, update and delete), it's a operations done in a data repository (just database and records). 
      * Create a data validation and a regression test suite and publish the results to Azure Pipelines:
-       * Export your collection and eventually the environments if you have used them from Postman. My collection ((__StarterAPIs.postman_collection.json__ and __StarterAPIs2.postman_collection.json)) and my environment (__Walkthrough_StarterAPIs.postman_environment.json__) are under postman-folder.  
+       * Export your collection and eventually the environment variables (if your collection uses it) from Postman. My collection (__StarterAPIs.postman_collection.json__ and __StarterAPIs2.postman_collection.json) and my environment (__Walkthrough_StarterAPIs.postman_environment.json__) are under __postman__-folder.
+       __StarterAPIs.postman_collection.json__ for `````Get All Employees````, ````Get Employee```` and ````Create Employee````     
     
-    
+     * Now, back to your DevOps project to create a pipeline:
+       * You create your pipeline like I did previously when I create a pipeline for Terraform. Except that you have to __Add__ a two __command line__ tasks.
+         * First task to instal __Newman__ . Newman is a command-line collection runner for Postman, and its help you to test Postman collection directly form the command-line.
+         To install Newman, put in the script: ````sudo npm install -g newman````
+         * Second task to run the collection:
+         In the script: ````newman run StarterAPIs.postman_collection.json -e Walkthrough_StarterAPIs.postman_environment.json --reporters cli,junit --reporter-junit-export result.xml```` . In the command, you are using ````--reporters cli,junit```` means you are specifying the output both as junit and as comman-line interface.
+         * Add an __Artifact__ and a __Publish Test Results__ to publish the results.
+         * Run your pipeline and after a success, you will find the __result.xml__ under the Artifacts. See my __result.xml__ under postman-folder. Under __Publish Test Results__ there is a link
+         
+         
