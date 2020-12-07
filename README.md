@@ -159,3 +159,20 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
      * After that you need to configure the VM deployment:
        * The VM can be added as resource within environment.
        * [Follow the instructions to create an environment in Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/deploy-linux-vm?view=azure-devops&tabs=java)
+       * If the registration script shows ````sudo: ./svc.sh: command not found````:
+           ````sudo bin/installdependencies.sh````
+               ````cd ..````
+           ````sudo rm -rf azagent````
+       * Run the registration script again.
+       * After you have successfully completed all the steps, Update azure-pipelines.yaml with the Environment, and run the pipeline. You can now deploy to the Linux VM. See              ````deployment: VMDeploy```` in **azure-pipelines.yaml**.
+       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/vmdeploy_response.png)
+       
+       * After you are done with running all the below mentioned commands in your VM, you need to publish and consume files in pipeline to perform any action on the file.
+         See `````task: PublishBuildArtifacts@1```` under `````job: Build```` in **azure-pipelines.yaml**
+       * When you are done, connect to your VM ````ssh -i path/to/your/id_rsa admin_user@VM-public-ip-addr```` and run your test suite ````login.py````. You sholud get this:
+       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/selenium_test.png)
+       
+   - **4. Alert  
+     * fdfdf
+       
+       
