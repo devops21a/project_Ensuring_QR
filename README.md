@@ -172,7 +172,9 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
        * When you are done, connect to your VM ````ssh -i path/to/your/id_rsa admin_user@VM-public-ip-addr```` and run your test suite ````login.py````. You sholud get this:
        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/selenium_test.png)
        
-   - **4. Alert  
-     * fdfdf
+   - **4. Alert**  
+     * you will configure an alert on an Azure AppService. You’ll send some requests to cause the AppService to error, and trigger your alert.
+      * Go to your appService in Micorsoft Azure, then look for **Monitoring** in the menu on the left hand side, then **Alerts**, click this.
+      * 
        
        
