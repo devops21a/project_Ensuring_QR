@@ -18,7 +18,7 @@ jobs:
     displayName: Run JMeter Test Suite
     inputs:
       script: >
-        jmeter -n -t Stress_test.jmx -l stress_result.csv -e -o StressResults
+        jmeter -jcsvfile=stress.csv -n -t Stress_test.jmx -l stress_result.csv -e -o StressResults
       workingDirectory: JMeter
   - task: PublishPipelineArtifact@1
     displayName: Publish Pipeline Artifact - JMeter
