@@ -57,3 +57,9 @@ After you have collected your dependencies, the first thing you will do is to st
     - Initialize the Azure DevOps Repo to build the pipeline by __import a repository__ under __Repos__
     - Create a new Azure DevOps Build Pipeline
       - Click on Pipelines/pipelines on the left, then __Create Pipeline__. Select __Use the classic editor__
+      - Then select the __Azure Repos Git__ option and select your project, repo and the branch, so __continue__
+      - In __Select a template__, click on __Empty job__
+      - Then click the plus sign (+) and add the __copy files__ task. Set the target folder as __$(build.artifactstagingdirectory)/Terraform__ and the display name as __Copy     Files__
+      - Add another job with type __Publish Build Artifacts__ with defaults parameters
+      - Now in the __Triggers__ tab, check __Enable continuous integration__ checkbox, and click on __Save & queue__, the __Save and run__. The pipeline is launched, and the status should be __Success__
+      
