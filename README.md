@@ -152,5 +152,7 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/jmeter_endurance_result.png)
        
    - **3. Selenium**
-     * ererer  
+     * Create a functional UI test suite that adds all products to a cart and then removes them (https://www.saucedemo.com/). And youu have to include ````print()```` commands through the test so the actions of the testscan be determined.
+     See the file **login.py** under __selenium__-folder.
+     * After that you have to deploy the UI 
        
