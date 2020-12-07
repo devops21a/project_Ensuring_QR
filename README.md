@@ -106,6 +106,17 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
          * Second task to run the collection:
          In the script: ````newman run StarterAPIs.postman_collection.json -e Walkthrough_StarterAPIs.postman_environment.json --reporters cli,junit --reporter-junit-export result.xml```` . In the command, you are using ````--reporters cli,junit```` means you are specifying the output both as junit and as comman-line interface.
          * Add an __Artifact__ and a __Publish Test Results__ to publish the results.
-         * Run your pipeline and after a success, you will find the __result.xml__ under the Artifacts. See my __result.xml__ under postman-folder. Under __Publish Test Results__ there is a link
-         
+         * Run your pipeline and after a success, you will find the __result.xml__ under the Artifacts. See my __result.xml__ and __result2.xml__ under postman-folder. Under __Publish Test Results__ there is a link (__Published Test Run__) to see the result usinf JUnit.
+         * After testting: __StarterAPIs.postman_collection.json__ , I get these results:
+          ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/postman_startapis.png)
+          and:
+          ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/postman_startapis_chart.png)
+          and test results:
+          ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/postman_startapis_testResults.png)
+         *  testting: __StarterAPIs2.postman_collection.json__ :
+          ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/postman_startapis2.png)
+          and:
+          ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/postman_startapis2_chart.png)
+          and the test results:
+          ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/postman_startapis2_testResults.png)
          
