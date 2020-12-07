@@ -77,5 +77,6 @@ After you have collected your dependencies, the first thing you will do is to st
           - Terraform plan
           - Terraform apply
           - In Terraform plan and apply, set the Environment Azure Subscription to your Subscription.
-        - Click on __Save__, then on __Create release__, and it should show __Terraform Succeeded__ .  
+        - Click on __Save__, then on __Create release__, and it should show __Terraform Succeeded__ . As shown above:
+        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/release_pipeline_succeeded.png)
         
