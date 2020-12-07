@@ -38,6 +38,8 @@ After you have collected your dependencies, the first thing you will do is to st
     - using: ````ssh-keygen -t rsa -b 4096 -C your-email-address ````
     - copy the key and into your GItHub, make a new SSH key
     - so ````git clone````
-  - create a resource group: ```az group create --location your-location --name nameofthegroup````
-  - dsdsds
+  - Create a resource group: ````az group create --location your-location --name nameoftheresourcegroup````
+  - Run the shell-script: ````configure_storage_account.sh```` from your command line. Use the project group created before.
+  - To list the account access keys (````access_key````), run: ````àz storage account keys list --resource-group nameoftheresourcegroup --account-name nameofthestorageaccount````
+  
 
