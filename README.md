@@ -12,12 +12,21 @@ Befor you even get ready to build the code:
    * Terraform
    * JMeter
    * Postman
-2. Make a plan
-3. Read the project several times
+2. Create a GitHub repository
+3. Create a disposable Outlook account
+4. Create a free Azure Account
+5. Install Azure CLI or use cloud shell
+6. Use your favorite IDE or a text editor
+7. Make a plan
+8. Read the project several times
 
 ## Dependencies
 To do before you run the code:
 
-1. 
+1. Install Terraform
+2. Install JMeter
+3. Install Postman
+4. Install Python
+5. Install Selenium
 
 
