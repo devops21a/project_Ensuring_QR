@@ -38,7 +38,6 @@ After you have collected your dependencies, the first thing you will do is to st
     - using: ````ssh-keygen -t rsa -b 4096 -C your-email-address ````
     - copy the key and into your GItHub, make a new SSH key
     - so ````git clone````
-  - erererer
-  ererere
+  - ererererererere
 
 
