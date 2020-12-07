@@ -48,4 +48,4 @@ After you have collected your dependencies, the first thing you will do is to st
     ````az adsp create-for-rbac --role="Contributor" --scopes="/subscriptions/your-subscription-ID"````
   - Create a __terraform__ folder and inside another folder named __environments__, to store the different configurations of modules according to the environments you use.
   - Create another folder __project__ as a subfolder to environments to stimulate a type of environment. See the directory tree:
-    ![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/azure_cloud_shell.png)
+    ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/terraform_tree.png)
