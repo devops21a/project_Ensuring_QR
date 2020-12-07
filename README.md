@@ -152,7 +152,10 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/jmeter_endurance_result.png)
        
    - **3. Selenium**
-     * Create a functional UI test suite that adds all products to a cart and then removes them (https://www.saucedemo.com/). And youu have to include ````print()```` commands through the test so the actions of the testscan be determined.
+     * Create a functional UI test suite that adds all products to a cart and then removes them (https://www.saucedemo.com/). And youu have to include ````print()```` commands through the test so the actions of the testscan be determined. In additional to this, you must show the user name if the logging was successful.
      See the file **login.py** under __selenium__-folder.
-     * After that you have to deploy the UI 
-       
+     ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/logging_successful.png)
+     
+     * After that you need to configure the VM deployment:
+       * The VM can be added as resource within environment.
+       * [Follow the instructions to create an environment in Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/deploy-linux-vm?view=azure-devops&tabs=java)
