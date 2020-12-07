@@ -6,7 +6,7 @@ In this project, you will create a tests environments and run a variety of autom
 
 ## Getting Started
 Befor you even get ready to build the code:
-* Make a plan
-** Read the project several times
+1. Make a plan
+2. Read the project several times
 
 
