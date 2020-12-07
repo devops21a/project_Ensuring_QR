@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="StarterAPIs2" tests="2" time="1.605">
+  <testsuite name="PUT Employee" id="8ebe2e91-1fad-4cbd-849a-4bb7f232929b" timestamp="2020-12-06T23:22:39.490Z" tests="2" failures="0" errors="0" time="0.832">
+    <testcase name="Status code is 200" time="0.832" classname="StarterApIs2"/>
+    <testcase name="Status is success" time="0.832" classname="StarterApIs2"/>
+  </testsuite>
+  <testsuite name="Delete Employee" id="9f9d3e1a-84e5-44ea-9b55-325b1ef41a82" timestamp="2020-12-06T23:22:39.490Z" tests="1" failures="0" errors="0" time="0.773">
+    <testcase name="Status code name has string" time="0.773" classname="StarterApIs2"/>
+  </testsuite>
+</testsuites>
