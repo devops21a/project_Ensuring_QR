@@ -137,10 +137,22 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
          * Stress test: many users (30 users) over short period of time (3 seconds) 
          * Endurance test: constant load over a long period of time (60 seconds)
        * Like you did it before, the pipeline to run JMeter contains in addition to the agent, add the __JMeter tool installer__ after you have instlled the JMeter extension. Name will be "Install JMeter 5.3", the version "5.3". After that add a __command-line__ to run the script:
-       ````jmeter  .jcsvfile=/path/to/file.csv -n -t Starter.jmx -l result.csv -e -o Test```` . 
+       ````jmeter  -jcsvfile=stress.csv -n -t Starter.jmx -l result.csv -e -o Test```` . 
+       
        The **Starter.jmx** file will be generated using the starterAPIs using variables in JMeter GUI.
-       Under JMeter-folder you can find the tests, the html-reports and the YAML-file for the stress test. It's the same for the endurannce test, just change the ````Stress_test.jmx````in the script to the ````Endurance_test.jmx````.
+       Under JMeter-folder you can find the tests, the html-reports and the YAML-file for the stress test. It's the same for the endurannce test, just change the           ````Stress_test.jmx````in the script to the ````Endurance_test.jmx````.
        
+       After running the pipeline, you should get this:
+       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/jmeter_pipeline.png)
        
+       JMeterstress result:
+       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/jmeter_stress_result.png)
        
+       JMeter endurance result:
+       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/jmeter_endurance_result.png)
+       
+   - **3. Selenium**
+     * Create a functional UI test suite that adds all products to a cart and then removes them (https://www.saucedemo.com/). And youu have to include ````print()```` commands through the test so the actions of the testscan be determined.
+     See the file **login.py** under __selenium__-folder.
+     * After that you have to deploy the UI 
        
