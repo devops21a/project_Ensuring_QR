@@ -53,4 +53,7 @@ After you have collected your dependencies, the first thing you will do is to st
     ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/terraform_tree.png)
     
   - Deploying Terraform Infrastructure (Terraform resources) using Azure DevOps Pipelines:
-    - trtrtrt
+    - Log in to your DevOps account and create a new project.
+    - Initialize the Azure DevOps Repo to build the pipeline by __import a repository__ under __Repos__
+    - Create a new Azure DevOps Build Pipeline
+      - Click on Pipelines/pipelines on the left, then Create Pipeline. Select Use the classic editor
