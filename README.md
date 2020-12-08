@@ -137,7 +137,7 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ ..
          * Stress test: many users (30 users) over short period of time (3 seconds) 
          * Endurance test: constant load over a long period of time (60 seconds)
        * Like you did it before, the pipeline to run JMeter contains in addition to the agent, add the __JMeter tool installer__ after you have instlled the JMeter extension. Name will be "Install JMeter 5.3", the version "5.3". After that add a __command-line__ to run the script:
-       ````jmeter  -jcsvfile=stress.csv -n -t Starter.jmx -l result.csv -e -o Test```` . 
+       ````jmeter -n -t Stress_test.jmx -l result_stress.csv -e -o StressResults```` . 
        
        The **Starter.jmx** file will be generated using the starterAPIs using variables in JMeter GUI.
        Under JMeter-folder you can find the tests, the html-reports and the YAML-file for the stress test. It's the same for the endurannce test, just change the           ````Stress_test.jmx````in the script to the ````Endurance_test.jmx````.
