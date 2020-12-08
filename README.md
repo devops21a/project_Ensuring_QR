@@ -171,6 +171,7 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ ..
        * After you are done with running all the below mentioned commands in your VM, you need to publish and consume files in pipeline to perform any action on the file.
          See `````task: PublishBuildArtifacts@1```` under `````job: Build```` in **azure-pipelines.yaml**
        * When you are done, connect to your VM ````ssh -i path/to/your/id_rsa admin_user@VM-public-ip-addr```` and run your test suite ````login.py````.
+         
          You sholud get the log-file and the messages, like this:
        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/selenium_test.png)
        
