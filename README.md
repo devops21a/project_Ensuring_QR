@@ -85,7 +85,7 @@ After you have collected your dependencies, the first thing you will do is to st
         ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/deployment_succeeded.png)
         ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/terra_apply.png)
         
-The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
+The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ ..
 
   **2. Execution of the tests duites**
     The tests suites will be executed to the Azure Devops, CI/CD pipeline.
