@@ -83,7 +83,7 @@ After you have collected your dependencies, the first thing you will do is to st
         As shown above:
         ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/release_pipeline_succeeded.png)
         ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/deployment_succeeded.png)
-        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/pipeline_deployments.png)
+        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/terra_apply.png)
         
 The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ .
 
