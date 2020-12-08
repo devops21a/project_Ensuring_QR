@@ -143,7 +143,8 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ ..
        Under JMeter-folder you can find the tests, the html-reports and the YAML-file for the stress test. It's the same for the endurannce test, just change the           ````Stress_test.jmx````in the script to the ````Endurance_test.jmx````.
        
        After running the pipeline, you should get this:
-       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/jmeter_pipeline.png)
+       Running Stress test (same for endurance test):
+       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/jmeter_stress.png)
        
        JMeterstress result:
        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/jmeter_stress_result.png)
