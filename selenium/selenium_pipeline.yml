@@ -11,14 +11,14 @@ jobs:
   steps:
   - checkout: self
   - task: DownloadBuildArtifacts@0
-    displayName: Download Artifacts
+    displayName: Download The Artifacts
     inputs:
       buildType: specific
       project: fd1bd439-c841-4b31-b347-28f630694097
       definition: 9
       artifactName: LoginTestSuite
   - task: CopyFiles@2
-    displayName: 'Copy Files to: D:\a\1\a\LoginTestSuite\selenium\bin'
+    displayName: Copy Files
     inputs:
       SourceFolder: D:\a\1\a\LoginTestSuite\selenium
       TargetFolder: D:\a\1\a\LoginTestSuite\selenium\bin
@@ -28,16 +28,16 @@ jobs:
     displayName: Install Selenium-webdriver
     inputs:
       script: >
-        npm install selenium-webdriver
+        pip install selenium
       workingDirectory: D:\a\1\a\LoginTestSuite\selenium\bin
   - task: CmdLine@2
-    displayName: Install chromedriver
+    displayName: Install webdriver_manager
     inputs:
       script: >
-        npm install chromedriver
+        pip install webdriver-manager
       workingDirectory: D:\a\1\a\LoginTestSuite\selenium\bin
   - task: PythonScript@0
-    displayName: Run login.py
+    displayName: Run script
     inputs:
       scriptPath: D:\a\1\a\LoginTestSuite\selenium\bin\login.py
 ...
