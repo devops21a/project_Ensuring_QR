@@ -195,7 +195,9 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ ..
        
        Graphs of resource:
        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/graphs_of_resource.png)
-  
+       
+     * **About Log Analytics**
+      * I made a worksapce following the steps [here](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-sources-custom-logs)
   
 ## Output 
 See the images
