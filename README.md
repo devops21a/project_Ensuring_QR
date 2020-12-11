@@ -175,6 +175,9 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ ..
          You sholud get the log-file and the messages, like this:
        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/selenium_test.png)
        
+       * And The execution of the test suite by the CI/CD pipeline (the yaml-file of the pipeline is under selenium-folder/**selenium_pipeline.yml**):
+       ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/selenium_test2.png)
+       
    - **4. Alert**  
       * you will configure an alert on an Azure AppService. You’ll send some requests to cause the AppService to error, and trigger your alert.
        * Go to your appService in Micorsoft Azure, then look for **Monitoring** in the menu on the left hand side, then **Alerts**, click this.
