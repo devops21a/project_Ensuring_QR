@@ -202,7 +202,8 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ ..
        * Then I uploaded a sample log (**selenium/login.log**) with a new line as delimeter following the [docs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-sources-custom-logs). I changed the permissions of ````login.log```` to 755.
        * Added the log path. In my case **/home/adminuser/azagent/_work/1/LoginTestSuite/selenium/login.log** and provided a name for the log "FinalTest"
        * I queried mu custom Log **FinalTest_CL**
-       * But, I don't get returned  the records. I just get **No results found **
+       * But, I don't get returned  the records. I just get **No results found**
+       
        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/no_results_found.png)
        * I tried many times to get the records by making new worksapce, new log-file and even I tried on another VM. But I keep getting **Nothing**.
        * I tried the trouble shooting, using the **Log Analytics agent for Linux log file**: ````sudo cat /var/opt/microsoft/omsagent/<workspace id>/log/omsagent.log````
