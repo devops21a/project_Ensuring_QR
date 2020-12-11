@@ -210,7 +210,7 @@ The YAML-file of the pipeline is in my repo __my_azure_pipelines.yml__ ..
        * I found these two incomprehensible lines:  
        ![alt text](https://github.com/devops21a/project_Ensuring_QR/blob/main/screenshots/linux_agent_log.png)
        
-       * I searched almmost the world to understand why I am not getting the records without success.
+       * I searched almost the world to understand why I am not getting the records without success.
        
 ## Output 
 See the images
