@@ -1,0 +1,51 @@
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: refs/heads/main
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    vmImage: vs2017-win2016
+  steps:
+  - checkout: self
+  - task: CopyFiles@2
+    displayName: Copy Files
+    inputs:
+      TargetFolder: '$(build.artifactstagingdirectory)/Terraform '
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
+- job: Job_2
+  displayName: Agent job
+  pool:
+    vmImage: vs2017-win2016
+  steps:
+  - checkout: self
+  - task: TerraformInstaller@0
+    displayName: Use Terraform 0.13.5
+    inputs:
+      terraformVersion: 0.13.5
+  - task: TerraformCLI@0
+    displayName: terraform init
+    inputs:
+      command: init
+      workingDirectory: terraform/environments/project
+      backendType: selfConfigured
+  - task: TerraformCLI@0
+    displayName: terraform validate
+    inputs:
+      workingDirectory: terraform/environments/project
+  - task: TerraformCLI@0
+    displayName: terraform plan
+    inputs:
+      command: plan
+      workingDirectory: terraform/environments/project
+      environmentServiceName: 57a8c0e3-dc0e-4f02-be37-bdf7eeb2ec1d
+  - task: TerraformCLI@0
+    displayName: terraform apply
+    inputs:
+      command: apply
+      workingDirectory: terraform/environments/project
+      environmentServiceName: 57a8c0e3-dc0e-4f02-be37-bdf7eeb2ec1d
+...
