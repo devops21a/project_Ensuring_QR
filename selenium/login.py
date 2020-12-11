@@ -60,7 +60,7 @@ def login(user, password):
             btn.click()
 
     print('All the products are added to cart')
-    ## removing the products
+    # removing the products
     for inventory in invenrotyList:
         for item in itemList:
             print("Removing " + item.text + " from cart")
