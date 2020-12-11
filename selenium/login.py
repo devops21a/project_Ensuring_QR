@@ -10,12 +10,13 @@ import logging
 
 
 def login(user, password):
-    # Create and configure logger
-    logging.basicConfig(filename="login_log.log",
-                            format='%(asctime)s %(message)s',
-                            filemode='w')
+    
     # Creating an object
     logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+    handler = logging.FileHandler('login.log', 'w', 'utf-8')
+    handler.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
+    logger.addHandler(handler)
     options = ChromeOptions()
     options.add_argument("--headless")
     #driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver", options=options)
@@ -24,13 +25,11 @@ def login(user, password):
     # Setting the threshold of logger to DEBUG
     logger.setLevel(logging.DEBUG)
     print('Starting the browser...')
-    logger.debug('Starting the browser...')
-    # --uncomment when running in Azure DevOps.
     
+    # --uncomment when running in Azure DevOps.
     options.add_argument("--headless")
     
     print('Browser started successfully. Navigating to the demo page to login.')
-    logger.debug('Browser started successfully. Navigating to the demo page to login.')
     # go to the page
     driver.get('https://www.saucedemo.com/')
 
@@ -40,13 +39,9 @@ def login(user, password):
     mypassword.send_keys(password)
     driver.find_element_by_id("login-button").click()
     if WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "inventory_container"))):
-        print('--------------------------------------------------------------------')
         print('The Login was successful by the user name: ' + user)
-        print('--------------------------------------------------------------------')
-        logger.debug('The Login was successful by the user name: ' + user)
     else:
         print('Your login was unsuccessful')
-        logger.debug('Your login was unsuccessful')
         driver.close()
     # List of inventory
     invenrotyList = driver.find_elements_by_class_name("inventory_list")
@@ -61,24 +56,17 @@ def login(user, password):
     for inventory in invenrotyList:
         for item in itemList:
             print("Adding " + item.text + " to cart")
-            logger.debug("Adding " + item.text + " to cart")
         for btn in btnAddList:
             btn.click()
 
-    print('----------------------------------')
     print('All the products are added to cart')
-    logger.debug('All the products are added to cart')
-    print('----------------------------------------------------')
     ## removing the products
     for inventory in invenrotyList:
         for item in itemList:
             print("Removing " + item.text + " from cart")
-            logger.debug("Removing " + item.text + " from cart")
         for btn in btnRemoveList:
             btn.click()
-    print('----------------------------------------------------')
     print('All products are removed from cart')
-    logger.debug('All products are removed from cart')
     driver.close()
 
 login('standard_user', 'secret_sauce')
